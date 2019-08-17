@@ -26,10 +26,10 @@ RSpec.describe 'HTML Album Cover' do
 
         expect(back_cover.children.select {|ch| ch.name == 'h3'}[1].children.first.text).to include("WRITTEN BY"), "A second 'h3' tag should contain the text 'WRITTEN BY' (remaining text optional)"
 
-        expect(back_cover.children.any? {|ch| ch.name == 'p'}).to be == 'true', "No 'p' tag found"
+        expect(back_cover.children.any? {|ch| ch.name == 'p'}).to be == true
         expect(back_cover.children.select {|ch| ch.name == 'p'}.first.children.first.text).to include("PUBLISHED BY"), "The 'p' tag should include the text 'PUBLISHED BY'"
 
-        expect(back_cover.children.any? {|ch| ch.name == "span"}).to be == 'true', "No 'span' tag was found"
+        expect(back_cover.children.any? {|ch| ch.name == "span"}).to be == true
         expect(back_cover.children.select {|ch| ch.name == "span"}.first.children.first.text).to include("PHARRELLWILLIAMS.COM"), "The first span tag should include the text 'PHARRELLWILLIAMS.COM'"
 
         expect(back_cover.children.any? {|ch| ch.name == "img"}).to be == 'true', "No 'img' tag was found"
