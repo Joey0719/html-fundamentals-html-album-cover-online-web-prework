@@ -4,7 +4,7 @@ RSpec.describe 'HTML Album Cover' do
       it 'the title-box section contains the correct header sizes and text content'do
         title_box = parsed_html.search('#title_box').first
 
-        expect(title_box.children.any? {|ch| ch.name == 'h4'}).to be == 'true', "No 'h4' tag(s) found"
+        expect(title_box.children.any? {|ch| ch.name == 'h4'}).to be == true
         expect(title_box.children.select {|ch| ch.name == 'h4'}.first.children.first.text).to be == ("PHARRELL WILLIAMS"), "Your 'h4' tag should contain the text 'PHARRELL WILLIAMS'"
 
         expect(title_box.children.any? {|ch| ch.name == 'h2'}).to be == 'true', "No 'h2' tag found"
